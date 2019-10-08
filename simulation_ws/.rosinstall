@@ -1,1 +1,1 @@
-- git: {local-name: src/deps/xacro, uri: "https://github.com/AAlon/xacro", version: ros2-find}
+- git: {local-name: src/deps/xacro, uri: "https://github.com/ros/xacro", version: 2.0.1}
