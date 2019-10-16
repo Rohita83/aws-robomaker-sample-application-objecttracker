@@ -21,7 +21,7 @@ import yaml
 from PIL import Image
 import numpy as np
 import tensorflow as tf
-
+import cv2
 import rclpy
 from rclpy.node import Node
 
@@ -99,6 +99,8 @@ class InferenceWorker(Node):
                                 image_data, 'raw', 'BGR', 0, 1)
         image = image.resize(TRAINING_IMAGE_SIZE)
         image = np.array(image)
+        image = cv2.medianBlur(image,3)
+        image = cv2.GaussianBlur(image,(5,5),0)
 
         # Get the yuma component of the image
         r, g, b = image[:, :, 0], image[:, :, 1], image[:, :, 2]
