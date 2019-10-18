@@ -25,6 +25,8 @@ from launch.actions import DeclareLaunchArgument
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+    world_name = os.environ.get('WORLD_NAME', 'empty')
+    world_file_name =  str(world_name) + '.world'
     use_sim_time = launch.substitutions.LaunchConfiguration('use_sim_time', default='false')
     object_tracker_world = get_package_share_directory('object_tracker_simulation')
     gazebo_ros = get_package_share_directory('gazebo_ros')
@@ -52,7 +54,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             name='world',
-            default_value=[os.path.join(object_tracker_world, 'worlds', 'empty.world'), ''],
+            default_value=[os.path.join(object_tracker_world, 'worlds', world_file_name), ''],
             description='SDF world file'),
         DeclareLaunchArgument(
             name='gui',

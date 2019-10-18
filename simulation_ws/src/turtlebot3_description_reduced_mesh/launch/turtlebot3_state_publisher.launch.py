@@ -26,8 +26,14 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+    world_name = os.environ.get('WORLD_NAME', 'empty')
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi.urdf'
+    if world_name=='brick_wall':
+        waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi_brick_wall.urdf'
+        print(world_name)
+    else:
+        waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi.urdf'
+
     burger_urdf_file_name = 'turtlebot3_burger.urdf'
 
     waffle_pi_urdf_path = os.path.join(get_package_share_directory('turtlebot3_description'), 'urdf', waffle_pi_urdf_file_name)

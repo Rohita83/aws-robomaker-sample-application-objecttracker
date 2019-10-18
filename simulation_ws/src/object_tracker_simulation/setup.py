@@ -18,6 +18,7 @@ setup(
         ('share/' + package_name + '/launch', ['launch/local_training.launch.py']),
         ('share/' + package_name + '/launch', ['launch/distributed_training.launch.py']),
         ('share/' + package_name + '/worlds', ['worlds/empty.world']),
+        ('share/' + package_name + '/worlds', ['worlds/brick_wall.world']),
         ('share/' + package_name, ['package.xml']),
         ('share/ament_index/resource_index/packages', ['resource/' + package_name])
     ],
