@@ -36,7 +36,6 @@ AWS_REGION = "us-west-2"
 TRAINING_IMAGE_SIZE = (160, 120)
 
 world_name = os.environ.get('WORLD_NAME', 'empty')
-print(world_name)
 
 def load_config(config_path):
    stream = open(config_path, 'r')
@@ -152,7 +151,7 @@ if __name__ == '__main__':
     model_path = sys.argv[2]
 
     context = load_config(source_config)
-    #download_model_from_s3(context, model_path)
+    download_model_from_s3(context, model_path)
     print('Successfully downloaded model to ', model_path)
     print('Starting Inference Worker, Specified Model Directory: ', model_path)
 

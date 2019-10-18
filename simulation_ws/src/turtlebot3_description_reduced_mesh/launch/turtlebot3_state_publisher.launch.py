@@ -30,7 +30,6 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     if world_name=='brick_wall':
         waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi_brick_wall.urdf'
-        print(world_name)
     else:
         waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi.urdf'
 
