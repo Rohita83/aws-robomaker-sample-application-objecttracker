@@ -36,6 +36,7 @@ AWS_REGION = "us-west-2"
 TRAINING_IMAGE_SIZE = (160, 120)
 
 world_name = os.environ.get('WORLD_NAME', 'empty')
+do_blur = os.environ.get('DO_BLUR', 'true')
 
 def load_config(config_path):
    stream = open(config_path, 'r')
@@ -96,13 +97,14 @@ class InferenceWorker(Node):
     def callback_image(self, raw_image):
         # Read the image
         global world_name
+        global do_blur
         image_data = np.array(raw_image.data)
         image = Image.frombytes('RGB', (raw_image.width, raw_image.height),
                                 image_data, 'raw', 'BGR', 0, 1)
         image = image.resize(TRAINING_IMAGE_SIZE)
         image = np.array(image)
 
-        if world_name=='brick_wall':
+        if (world_name!='empty' and do_blur=='true'):
             image = cv2.GaussianBlur(image,(5,5),0)
 
         # Get the yuma component of the image
