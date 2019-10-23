@@ -26,7 +26,6 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-    world_name = os.environ.get('WORLD_NAME', 'empty')
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
     waffle_pi_urdf_file_name = 'turtlebot3_waffle_pi.urdf'
