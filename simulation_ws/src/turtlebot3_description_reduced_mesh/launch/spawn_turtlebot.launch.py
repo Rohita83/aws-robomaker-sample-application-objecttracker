@@ -34,8 +34,11 @@ def generate_launch_description():
         default_value='true',
         description='Use sim time',
         )
-
-    turtlebot3_model_waffle_pi = 'waffle_pi'
+    world_name = os.environ.get('WORLD_NAME', 'empty')
+    if world_name=='brick_wall':
+        turtlebot3_model_waffle_pi = 'waffle_pi_brick_wall'
+    else:
+        turtlebot3_model_waffle_pi = 'waffle_pi'
     turtlebot3_location_waffle_pi = get_package_share_directory('turtlebot3_description_reduced_mesh') \
         + '/urdf/turtlebot3_' + turtlebot3_model_waffle_pi + '.urdf.xacro'
     with subprocess.Popen(['ros2', 'run', 'xacro', 'xacro', turtlebot3_location_waffle_pi], stdout=subprocess.PIPE) as proc:
