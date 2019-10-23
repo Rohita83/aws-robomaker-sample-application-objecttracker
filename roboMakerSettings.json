@@ -32,12 +32,13 @@
               "MARKOV_PRESET_FILE": "object_tracker.py",
               "MODEL_S3_BUCKET": "<bucket name your your trained model>",
               "MODEL_S3_PREFIX": "model-store",
-              "ROS_AWS_REGION": "<the AWS region of your S3 model bucket>"
+              "ROS_AWS_REGION": "<the AWS region of your S3 model bucket>",
+              "WORLD_NAME": "<empty or brick_wall>"
             }
           },
           "robotSoftwareSuite": {
             "version": "<capitalised name of ROS distribution, e.g. Kinetic>",
-            "name": "ROS"
+            "name": "ROS2"
           },
           "simulationSoftwareSuite": {
             "name": "Gazebo",
@@ -77,12 +78,13 @@
               "MARKOV_PRESET_FILE": "object_tracker.py",
               "MODEL_S3_BUCKET": "<bucket name your your trained model>",
               "MODEL_S3_PREFIX": "model-store",
-              "ROS_AWS_REGION": "<the AWS region of your S3 model bucket>"
+              "ROS_AWS_REGION": "<the AWS region of your S3 model bucket>",
+              "WORLD_NAME": "<empty or brick_wall>"
             }
           },
           "robotSoftwareSuite": {
             "version": "<capitalised name of ROS distribution, e.g. Kinetic>",
-            "name": "ROS"
+            "name": "ROS2"
           },
           "simulationSoftwareSuite": {
             "name": "Gazebo",
