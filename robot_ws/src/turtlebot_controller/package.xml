@@ -11,7 +11,8 @@
   <maintainer email="ros-contributions@amazon.com">AWS RoboMaker</maintainer>
 
   <depend>python3-boto3</depend>
-  <depend>python3-yaml</depend>
+  <depend>python3-yaml</depend> 
+  <depend>python3-opencv</depend>
 
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>rclpy</exec_depend>
